@@ -17,7 +17,7 @@ Vision : To simplify digital KYC using automation, improving accuracy, speed, an
 - SQLite-based attempt tracking (fraud prevention)
 - FastAPI backend + Flask frontend interface
 
-##⚙️ Tech Stack
+## ⚙️ Tech Stack
 - **Backend**: FastAPI, OpenCV, Tesseract OCR, NumPy, Pillow
 - **Frontend**: Flask
 - **Database**: SQLite
@@ -93,6 +93,7 @@ Returns:
 - Cloud Deployment: Host the backend on AWS/GCP with CI/CD automation.
 - Role-Based Dashboard: Provide admin analytics, verification history, and user monitoring.
 - Multi-language Support: Enable OCR and interface support for multiple Indian languages.
+
 
 
 
