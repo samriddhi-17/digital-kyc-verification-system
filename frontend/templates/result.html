@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KYC Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<div class="container">
+
+    <h2>KYC Verification Result</h2>
+
+    {% if result.status == "approved" %}
+        <div class="success-box">
+            <h3>✔ KYC Approved</h3>
+            <p>{{ result.reason }}</p>
+        </div>
+
+    {% elif result.status == "rejected" %}
+        <div class="error-box">
+            <h3>✖ KYC Rejected</h3>
+            <p><b>Reason:</b> {{ result.reason }}</p>
+        </div>
+
+    {% else %}
+        <div class="error-box">
+            <h3>⚠ Error</h3>
+            <p>{{ result.message }}</p>
+        </div>
+    {% endif %}
+
+    <a href="/" class="btn">Go Back</a>
+
+</div>
+</body>
+</html>

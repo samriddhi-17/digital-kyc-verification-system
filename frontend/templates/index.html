@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KYC Verification</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>KYC Verification Portal</h2>
+
+    <form action="/submit_kyc" method="POST" enctype="multipart/form-data">
+
+        <!-- USER ID -->
+        <label>Your User ID</label>
+        <input type="text" name="user_id" required>
+
+        <!-- ADDRESS PROOF -->
+        <h3>Address Proof</h3>
+        <select name="address_doc_type" required>
+            <option value="AADHAAR">Aadhaar</option>
+            <option value="PASSPORT">Passport</option>
+            <option value="VOTER_ID">Voter ID</option>
+        </select>
+
+        <input type="file" name="address_proof" accept="image/*" required>
+
+
+        <!-- IDENTITY PROOF -->
+        <h3>Identity Proof</h3>
+        <select name="identity_doc_type" required>
+            <option value="PAN">PAN</option>
+            <option value="AADHAAR">Aadhaar</option>
+            <option value="PASSPORT">Passport</option>
+        </select>
+
+        <input type="file" name="identity_proof" accept="image/*" required>
+
+
+        <!-- OPEN CAMERA BUTTON -->
+        <h3>Live Selfie Capture</h3>
+
+        <button type="button" id="openCameraBtn" class="btn">
+            Open Camera
+        </button>
+
+
+        <!-- CAMERA SECTION (INITIALLY HIDDEN) -->
+        <div id="camera_section" style="display:none; margin-top:15px;">
+
+            <div class="camera-box">
+                <video id="video" autoplay></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+
+            <button type="button" id="captureBtn" class="btn">
+                Capture Selfie
+            </button>
+
+            <h4>Selfie Preview:</h4>
+            <img id="preview" src="" style="width:100%; border-radius:10px; display:none;">
+        </div>
+
+        <input type="hidden" name="selfie_captured" id="selfie_captured">
+
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="btn" id="submitBtn" style="margin-top:20px;">
+            Submit KYC
+        </button>
+
+    </form>
+</div>
+
+
+<script>
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const preview = document.getElementById("preview");
+const selfieInput = document.getElementById("selfie_captured");
+const submitBtn = document.getElementById("submitBtn");
+
+// Disable submit until selfie captured
+submitBtn.disabled = true;
+submitBtn.style.opacity = "0.5";
+
+// ---------------------
+// OPEN CAMERA
+// ---------------------
+document.getElementById("openCameraBtn").onclick = function () {
+    document.getElementById("camera_section").style.display = "block";
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => video.srcObject = stream)
+    .catch(err => alert("Camera error: " + err));
+
+    this.disabled = true;
+    this.style.opacity = "0.6";
+};
+
+// ---------------------
+// CAPTURE SELFIE
+// ---------------------
+document.getElementById("captureBtn").onclick = function () {
+    const ctx = canvas.getContext("2d");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    let data = canvas.toDataURL("image/jpeg", 0.9);
+    selfieInput.value = data;
+
+    preview.src = data;
+    preview.style.display = "block";
+
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+
+    alert("Selfie captured!");
+};
+</script>
+
+</body>
+</html>
