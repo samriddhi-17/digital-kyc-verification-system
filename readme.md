@@ -62,7 +62,8 @@ Returns:
         }
     }```
 </details> 
-## 🧪 Demo Flow
+
+## Demo Flow
 
 - Select Address Proof Type
 - Upload Address Proof
@@ -93,6 +94,7 @@ Returns:
 - Cloud Deployment: Host the backend on AWS/GCP with CI/CD automation.
 - Role-Based Dashboard: Provide admin analytics, verification history, and user monitoring.
 - Multi-language Support: Enable OCR and interface support for multiple Indian languages.
+
 
 
 
