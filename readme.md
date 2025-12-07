@@ -23,7 +23,7 @@ Vision : To simplify digital KYC using automation, improving accuracy, speed, an
 - **Database**: SQLite
 - **Other**: Python-Multipart, Scikit-Image
 
-![image](system arch.png)
+![image_alt]([system arch.png](https://github.com/samriddhi-17/digital-kyc-verification-system/blob/43349835e5f6711af6fd7daa0d6b42d73ba6bb8a/system%20arch.png))
 
 This KYC verification system uses a simple Flask frontend that lets users upload their address proof, identity proof, and selfie. These files are sent to a FastAPI backend, where OCR extracts text and OpenCV performs face detection and multi-metric face matching using SSIM, histogram correlation, ORB, and edge similarity. SQLite tracks user attempts and validation stages. The backend returns approval or rejection, completing a lightweight, fully automated e-KYC workflow.
 
@@ -93,6 +93,7 @@ Returns:
 - Cloud Deployment: Host the backend on AWS/GCP with CI/CD automation.
 - Role-Based Dashboard: Provide admin analytics, verification history, and user monitoring.
 - Multi-language Support: Enable OCR and interface support for multiple Indian languages.
+
 
 
 
