@@ -1,7 +1,8 @@
-#Digital KYC Verification System
+Digital KYC Verification System
 
-A lightweight AI-powered KYC verification pipeline that validates user identity using document OCR(Optical Character Recognition), image quality checks, and selfie-to-document face matching. Built with FastAPI, Flask, OpenCV, and Tesseract OCR.
-**Vision**: To simplify digital KYC using automation, improving accuracy, speed, and user trust.
+A lightweight AI-powered KYC verification pipeline that validates user identity using document OCR (Optical Character Recognition), image quality checks, and selfie-to-document face matching. Built with FastAPI, Flask, OpenCV, and Tesseract OCR.
+
+Vision : To simplify digital KYC using automation, improving accuracy, speed, and user trust.
 ##🚀 Features
 
 - Upload Address Proof, Identity Proof, and Selfie
@@ -92,4 +93,5 @@ Returns:
 - Cloud Deployment: Host the backend on AWS/GCP with CI/CD automation.
 - Role-Based Dashboard: Provide admin analytics, verification history, and user monitoring.
 - Multi-language Support: Enable OCR and interface support for multiple Indian languages.
+
 
