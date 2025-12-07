@@ -1,9 +1,9 @@
-Digital KYC Verification System
+# Digital KYC Verification System
 
 A lightweight AI-powered KYC verification pipeline that validates user identity using document OCR (Optical Character Recognition), image quality checks, and selfie-to-document face matching. Built with FastAPI, Flask, OpenCV, and Tesseract OCR.
 
 Vision : To simplify digital KYC using automation, improving accuracy, speed, and user trust.
-##🚀 Features
+## 🚀 Features
 
 - Upload Address Proof, Identity Proof, and Selfie
 - OCR-based document type detection (Aadhaar, PAN, Passport, Voter ID)
@@ -27,7 +27,7 @@ Vision : To simplify digital KYC using automation, improving accuracy, speed, an
 
 This KYC verification system uses a simple Flask frontend that lets users upload their address proof, identity proof, and selfie. These files are sent to a FastAPI backend, where OCR extracts text and OpenCV performs face detection and multi-metric face matching using SSIM, histogram correlation, ORB, and edge similarity. SQLite tracks user attempts and validation stages. The backend returns approval or rejection, completing a lightweight, fully automated e-KYC workflow.
 
-##🧪 API Endpoint
+## 🧪 API Endpoint
 **POST /verify_kyc**
 **Input**
 - user_id (string)
@@ -62,7 +62,7 @@ Returns:
         }
     }```
     </details> 
-##🧪 Demo Flow
+## 🧪 Demo Flow
 
 - Select Address Proof Type
 - Upload Address Proof
@@ -71,7 +71,7 @@ Returns:
 - Upload Selfie
 - Get Instant Result: Approved / Rejected
 
-##Screenshorts
+## Screenshorts
 
 - Upload Page (KYC Form Page): This page allows users to enter their User ID and upload Aadhaar/PAN documents along with a live selfie. It provides a clean interface for initiating KYC verification quickly and easily.
 ![image](frontend.png)
@@ -85,7 +85,7 @@ Returns:
 - Backend(FastAPI): The backend provides an interactive FastAPI Swagger UI where users can upload KYC documents, test the /verify_kyc API, view validation responses, and inspect detailed face-matching results in real time.   
 ![image](fastAPI.png)
 
-##🚀 Future Enhancements
+## 🚀 Future Enhancements
 
 - To improve accuracy, usability, and scalability, several enhancements can be implemented in future versions:
 - ML-based Face Recognition: Replace OpenCV heuristics with deep-learning models for higher verification accuracy.
@@ -93,5 +93,6 @@ Returns:
 - Cloud Deployment: Host the backend on AWS/GCP with CI/CD automation.
 - Role-Based Dashboard: Provide admin analytics, verification history, and user monitoring.
 - Multi-language Support: Enable OCR and interface support for multiple Indian languages.
+
 
 
